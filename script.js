@@ -304,7 +304,7 @@ $(document).ready(() => {
               if (backUpCoin != null && (timeNow - backUpCoin.time) < 120000) {
                   console.log("from local");
                   $(".loader").hide();
-                  $(`#${idCoin}`).html(`
+                  $(`#${idCoin}.card`).html(`
               <div><img src=${backUpCoin.image.small}/></div><br>
               <div>$ ${backUpCoin.market_data.current_price.usd.toFixed(4)}</div>
               <div>€ ${backUpCoin.market_data.current_price.eur.toFixed(4)}</div>
@@ -321,7 +321,7 @@ $(document).ready(() => {
                       success: function (results) {
                           $(".loader").hide();
                         
-                          $(`#${idCoin}`).html(`
+                          $(`#${idCoin}.card`).html(`
             <div><img src=${results.image.small}/></div><br>
             <div>$ ${results.market_data.current_price.usd.toFixed(4)}</div>
             <div>€ ${results.market_data.current_price.eur.toFixed(4)}</div>
